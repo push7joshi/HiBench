@@ -25,14 +25,14 @@ DIR=`cd $bin/../; pwd`
 . "${DIR}/conf/configure.sh"
 
 # path check
-$HADOOP_EXECUTABLE dfs -rmr $OUTPUT_HDFS
+$HADOOP_EXECUTABLE --config $HADOOP_CONF_DIR dfs -rmr $OUTPUT_HDFS
 
 # pre-running
 SIZE=`dir_size $INPUT_HDFS`
 START_TIME=`timestamp`
 
 # run bench
-$HADOOP_EXECUTABLE jar $HADOOP_EXAMPLES_JAR terasort -D mapred.reduce.tasks=$NUM_REDS $INPUT_HDFS $OUTPUT_HDFS
+$HADOOP_EXECUTABLE --config $HADOOP_CONF_DIR jar $HADOOP_EXAMPLES_JAR terasort -D mapred.reduce.tasks=$NUM_REDS $INPUT_HDFS $OUTPUT_HDFS
 result=$?
 if [ $result -ne 0 ]
 then
