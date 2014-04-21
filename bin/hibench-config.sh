@@ -38,7 +38,7 @@ DATATOOLS=`printenv DATATOOLS`
 
 if [ -n "$HADOOP_HOME" ]; then
 	HADOOP_EXECUTABLE=$HADOOP_HOME/bin/hadoop
-	HADOOP_CONF_DIR=$HADOOP_HOME/conf
+	#HADOOP_CONF_DIR=$HADOOP_HOME/conf
 	HADOOP_EXAMPLES_JAR=$HADOOP_HOME/hadoop-examples*.jar
 else 					
 ##make some guess if none of these variables are set
