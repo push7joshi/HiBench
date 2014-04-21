@@ -21,8 +21,8 @@ bin=`cd "$bin"; pwd`
 echo "========== preparing terasort data=========="
 # configure
 DIR=`cd $bin/../; pwd`
-. "${DIR}/../bin/hibench-config.sh"
-. "${DIR}/conf/configure.sh"
+#. "${DIR}/../bin/hibench-config.sh"
+#. "${DIR}/conf/configure.sh"
 
 # path check
 $HADOOP_EXECUTABLE --config $HADOOP_CONF_DIR dfs -rmr $INPUT_HDFS
