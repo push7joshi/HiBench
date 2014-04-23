@@ -24,8 +24,8 @@ export HIBENCH_VERSION="2.2"
 
 ###################### Global Paths ##################
 
-HADOOP_EXECUTABLE= 
-HADOOP_CONF_DIR=
+HADOOP_EXECUTABLE=$HADOOP_HOME/bin/hadoop
+HADOOP_CONF_DIR=$HADOOP_CONF_DIR
 HADOOP_EXAMPLES_JAR=
 HADOOP_HOME=`printenv HADOOP_HOME`
 HADOOP_EXECUTABLE=`printenv HADOOP_EXECUTABLE`
@@ -39,7 +39,7 @@ DATATOOLS=`printenv DATATOOLS`
 if [ -n "$HADOOP_HOME" ]; then
 	HADOOP_EXECUTABLE=$HADOOP_HOME/bin/hadoop
 	#HADOOP_CONF_DIR=$HADOOP_HOME/conf
-	HADOOP_EXAMPLES_JAR=$HADOOP_HOME/hadoop-examples*.jar
+	HADOOP_EXAMPLES_JAR=$HADOOP_HOME/hadoop-0.20.2-examples.jar
 else 					
 ##make some guess if none of these variables are set
 	if [ -z $HADOOP_EXECUTABLE ]; then
@@ -110,7 +110,7 @@ fi
 HADOOP_CONF_DIR="${HADOOP_CONF_DIR:-$HADOOP_HOME/conf}"
 
 # base dir HDFS
-export DATA_HDFS=/HiBench
+export DATA_HDFS=/tmp/hadoop-psjoshi/data/dfs/
 
 # local report
 export HIBENCH_REPORT=${HIBENCH_HOME}/hibench.report
